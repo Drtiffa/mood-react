@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "DKBuntaro";
+  src: url("./fonts/DKBuntaro.ttf");
+}
+@font-face {
+  font-family: "HILVCCBoing-Bold";
+  font-weight: bold;
+  src: url("./fonts/HILVCC+Boing-Bold.ttf");
+}
+@font-face {
+  font-family: "HILVCCBoing-Light";
+  src: url("./fonts/HILVCC+Boing-Light.ttf");
+} 
+
+$color-purple : #4c47a5; 
+$color-white : #ffffff; 
+$color-black : #000000;
+$color-green : #9fde3e;
+$color-grey : #adabab;
+
+@mixin button {
+  font-family: "HILVCCBoing-Bold";
+  padding: 5px 40px;
+  font-size: 18px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  background-color: $color-white;
+  border: 3px solid $color-purple;
+  color: $color-purple;
+  cursor: pointer;
+  &:hover {
+      background-color: $color-purple;
+      color: $color-white;
+  }
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(230, 230, 230, 0.5);
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $color-purple;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: $color-white; 
+}
+
+.mood_main {
+  position: relative;
+}
+
+.mood_nav {
+  display: flex;
+  width: 98%;
+  margin: 10px auto;
+  align-items: center;
+  .mood_logo {
+      font-family: "DKBuntaro";
+      color: $color-purple;
+      font-size: 110px;
+      width: 40%;
+  }
+  .mood_text-intro {
+      font-family: "DKBuntaro";
+      color: $color-purple;
+      font-size: 20px; 
+      width: 40%;
+      text-align: center;
+  }
+  .mood_login {
+      width: 40%;
+      text-align: right;
+      .mood_login-button {
+          @include button;
+      }
+  }
+}
