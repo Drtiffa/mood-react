@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import Header from './components/Header';
 import CreateAvatar from './components/CreateAvatar';
+import ButtonDownload from './components/ButtonDownload';
 	
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
                 <div className="mood_container">
                   <Header />
                   <CreateAvatar />
+                  <ButtonDownload />
                 </div>
             </div> 
         </div>  

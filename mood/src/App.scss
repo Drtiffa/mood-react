@@ -106,3 +106,66 @@ button:focus {
       }
   }
 }
+
+// button download
+.mood_button-download {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+  position: absolute;
+  .button_download {
+      font-family: "DKBuntaro";
+      font-style: normal;
+      font-weight: bold;
+      padding: 10px 40px;
+      font-size: 25px;
+      text-transform: uppercase;
+      background-color: $color-white;
+      border: 3px solid $color-purple;
+      color: $color-purple;
+      cursor: pointer;
+      &:hover {
+          background-color: $color-purple;
+          color: $color-white;
+      }
+  }
+}
+
+//  POPIN BUTTON SAVE AVATAR  //
+
+.modal_content {
+  font-family: "HILVCCBoing-Light";
+  text-align: center;
+  .modal_close {
+      float: right;
+      margin-right: 3%;
+      margin-top: -17px;
+      font-family: "HILVCCBoing-Bold";
+      cursor: pointer;
+      &:hover {
+          color: $color-purple;
+      }
+  }
+  h1 {
+      font-family: "DKBuntaro";
+      color: $color-purple;
+      font-size: 35px;
+      margin-top: 25px;
+  }
+  .avatar_download {
+      text-align: left;
+      padding: 0 5%;
+      letter-spacing: 1px;
+      > p {
+          margin: 10px 0;
+      }
+      .url {
+          color: $color-purple;
+      }
+      .svg, .png {
+          cursor: pointer;
+          font-family: "HILVCCBoing-Bold";
+          color: $color-purple;
+      } 
+  }
+}
