@@ -16,7 +16,7 @@ class CreateAvatar extends Component {
     return (
         <div id="params">
             {this.state.params.map((x) => <div className={`choice_element ${x.element}`}>
-            <img src={x.image} alt="test"></img>
+              <img src={`${x.image}`} alt="test"/>
             </div>)}
         </div>      
     );
