@@ -80,6 +80,8 @@ button:focus {
   position: relative;
 }
 
+//  NAV  //
+
 .mood_nav {
   display: flex;
   width: 98%;
@@ -107,7 +109,7 @@ button:focus {
   }
 }
 
-// button download
+// BUTTON DOWNLOAD AVATAR //
 .mood_button-download {
   bottom: 0;
   left: 50%;
@@ -131,7 +133,7 @@ button:focus {
   }
 }
 
-//  POPIN BUTTON SAVE AVATAR  //
+//  POPIN DOWNLOAD AVATAR  //
 
 .modal_content {
   font-family: "HILVCCBoing-Light";
@@ -167,5 +169,56 @@ button:focus {
           font-family: "HILVCCBoing-Bold";
           color: $color-purple;
       } 
+  }
+}
+
+// HOME
+
+.mood_home {
+  height: calc(100vh - 185px);
+}
+
+//  BLOCK CREATE AVATAR  //
+
+.mood_create-avatar {
+  width: 50%;
+  margin-top: 5%;
+  .mood_create-avatar-nav {
+    width: 75%;
+    margin: 0 auto;
+    .mood_create-nav-list {
+      list-style: none;
+      display: flex;
+      border-bottom: 2px solid $color-black;
+      padding-bottom: 2%;
+      margin-bottom: 5%;
+      .mood_create-nav-option {
+        width: 25%;
+        cursor: pointer;
+        color: $color-black;
+        font-size: 1.3rem;
+        font-family: "HILVCCBoing-Bold";
+        text-transform: uppercase;
+        text-align: center;
+        &:hover {
+          color: $color-grey;
+        }
+      }
+    }
+  }
+  .mood_create-avatar-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    width: 75%;
+    .choice_element {
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+        transition-duration: 0.3s;
+        background: #80808012;
+        border-radius: 50%;
+      }
+    }
   }
 }

@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.scss';
 import Header from './components/Header';
-import CreateAvatar from './components/CreateAvatar';
-import ButtonDownload from './components/ButtonDownload';
-import Canvas from './components/canvas';
+import Home from './components/Home';
+// import Canvas from './components/canvas';
 
 function App() {
   
@@ -17,8 +16,7 @@ function App() {
             <div className="mood_col-main">
                 <div className="mood_container">
                   <Header />
-                  <CreateAvatar />
-                  <ButtonDownload />
+                  <Home />
                 </div>
             </div> 
         </div>  
