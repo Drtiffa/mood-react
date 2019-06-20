@@ -29,26 +29,26 @@ class CreateAvatar extends Component {
               </ul>
           </div>
           {this.state.display === 'shape' &&  <div className="mood_create-avatar-wrapper">
-            {this.state.params.map(x => { if(x.categorie === "shape") {
-              return (<div className={`choice_element ${x.element}`}>
+            {this.state.params.map((x, i)  => { if(x.categorie === "shape") {
+              return (<div key={i} className={`choice_element ${x.element}`}>
               <img src={`${x.image}`} alt="test"/>
             </div>)}})}
           </div>}
           {this.state.display === 'face' &&  <div className="mood_create-avatar-wrapper">
-            {this.state.params.map(x => { if(x.categorie === "face") {
-              return (<div className={`choice_element ${x.element}`}>
+            {this.state.params.map((x, i) => { if(x.categorie === "face") {
+              return (<div key={i} className={`choice_element ${x.element}`}>
               <img src={`${x.image}`} alt="test"/>
             </div>)}})}
           </div>}
           {this.state.display === 'hair' &&  <div className="mood_create-avatar-wrapper">
-            {this.state.params.map(x => { if(x.categorie === "hair") {
-              return (<div className={`choice_element ${x.element}`}>
+            {this.state.params.map((x, i) => { if(x.categorie === "hair") {
+              return (<div key={i} className={`choice_element ${x.element}`}>
               <img src={`${x.image}`} alt="test"/>
             </div>)}})}
           </div>}
           {this.state.display === 'accessorie' &&  <div className="mood_create-avatar-wrapper">
-            {this.state.params.map(x => { if(x.categorie === "accessorie") {
-              return (<div className={`choice_element ${x.element}`}>
+            {this.state.params.map((x, i) => { if(x.categorie === "accessorie") {
+              return (<div key={i} className={`choice_element ${x.element}`}>
               <img src={`${x.image}`} alt="test"/>
             </div>)}})}
           </div>}

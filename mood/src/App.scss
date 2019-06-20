@@ -222,3 +222,63 @@ button:focus {
     }
   }
 }
+
+//  LOGIN  //
+
+.login_sign-in {
+  width: 50%;
+  float: left;
+  position: relative;
+  padding-top: 40%;
+}
+
+.login_sign-up {
+  width: 50%;
+  float: right;
+  position: relative;
+  padding-top: 40%;
+}
+
+.sign-in_content, 
+.sign-up_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+    .sign-in_title,
+    .sign-up_title {
+        font-family: "HILVCCBoing-Light";
+        font-size: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: -25px;
+    }
+    .sign-in_form, 
+    .sign-up_form {
+        font-family: "HILVCCBoing-Light";
+        .sign-in_form-element, 
+        .sign-up_form-element {
+            display: grid;
+            padding: 15px 0;
+            input {
+                border: none;
+                border-bottom: 1px solid black;
+                margin-top: 10px;
+                padding: 10px 0 5px;
+                width: 100%;
+                background: transparent;
+            }
+        }
+    }
+    .sign-in_button, 
+    .sign-up_button {
+        padding-top: 15%;
+        text-align: center;
+        .sign-in_submit, 
+        .sign-up_submit {
+            @include button;
+            padding: 5px 70px;
+        }
+    }
+}
