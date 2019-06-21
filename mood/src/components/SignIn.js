@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import ResultMessage from './ResultMessage';
 	
 class SignIn extends Component {
     state = {
         email: '',
-        password: ''
+        password: '',
+        resultType: '',
+        resultMessage: ''
     }
 
     checkLocalStorage = () => {
@@ -30,10 +33,13 @@ class SignIn extends Component {
         })
         .then(res => res.json())
         .then(data => {
+        this.setState({ resultType: data.resultType, resultMessage: data.resultMessage });
+
+        if (data.resultType === 'success') {
             localStorage.setItem("token",data.token)
             localStorage.setItem("email",email)
-            this.setState({ email });
-        })
+        }
+    })
         .catch(err => console.warn(err))
     }
 
@@ -41,10 +47,16 @@ class SignIn extends Component {
 	    this.setState({ email: '' });
 	    localStorage.removeItem("token");
 	    localStorage.removeItem("email");
-	  }
+    }
+      
+    clearResult = () => {
+        this.setState({ resultType: '', resultMessage: '' });
+    }  
 
     render() {
         return (
+            <>
+            <div className="result_message">{this.state.resultMessage && <ResultMessage type={this.state.resultType} message={this.state.resultMessage} clearResult={this.clearResult} />}</div>
             <div className="login_sign-in">
                 <div className="sign-in_content">
                     <div className="sign-in_title">
@@ -65,6 +77,7 @@ class SignIn extends Component {
                     </div>
                 </div>
             </div>
+            </>
         )
     }    
 }

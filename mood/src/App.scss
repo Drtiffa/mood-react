@@ -17,6 +17,7 @@ $color-white : #ffffff;
 $color-black : #000000;
 $color-green : #9fde3e;
 $color-grey : #adabab;
+$color-red : #ff2525;
 
 @mixin button {
   font-family: "HILVCCBoing-Bold";
@@ -281,4 +282,24 @@ button:focus {
             padding: 5px 70px;
         }
     }
+}
+
+
+// RESULT MESSAGES
+
+.result_message {
+  position: relative;
+  text-align: center;
+  .result {
+    position: absolute;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 900;
+    &.success {
+      color: $color-green;
+    }
+    &.failure {
+      color: $color-red;
+    }
+  }
 }

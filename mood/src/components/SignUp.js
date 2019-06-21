@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import ResultMessage from './ResultMessage';
 
 class SignUp extends Component {
   state = {
     email: '',
-    password: ''
+    password: '',
+    resultType: '',
+    resultMessage: ''
   }
 
   handleChange = (e) => {
@@ -22,11 +25,23 @@ class SignUp extends Component {
       body
     })
     .then(res => res.json())
+    .then(data => {
+      this.setState({ resultType: data.resultType, resultMessage: data.resultMessage });
+      if (data.resultType === 'success') {
+        this.setState({ email: '', password: '' });
+      }
+    })
     .catch(err => console.warn(err))
   }
 
+  clearResult = () => {
+    this.setState({ resultType: '', resultMessage: '' });
+  }  
+
   render() {
     return (
+        <>
+        <div className="result_message">{this.state.resultMessage && <ResultMessage type={this.state.resultType} message={this.state.resultMessage} clearResult={this.clearResult} />}</div>
         <div className="login_sign-up">
             <div className="sign-up_content">
                 <div className="sign-up_title">
@@ -51,6 +66,7 @@ class SignUp extends Component {
                 </div>
             </div>
         </div>
+        </>
     )
   }
 }  
