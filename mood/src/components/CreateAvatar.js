@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class CreateAvatar extends Component {
   state = {
     params : [],
-    display : 'shape'
+    display : 'shape',
+    selectedOption: 'element_1'
   }
 
   componentDidMount() {
@@ -16,6 +17,12 @@ class CreateAvatar extends Component {
   display = (part) => {
     this.setState({ display: part })
   } 
+
+  handleOptionChange = changeEvent => {
+    this.setState({
+      selectedOption: changeEvent.target.value
+    });
+  };
 
   render() {
     return (
@@ -30,27 +37,39 @@ class CreateAvatar extends Component {
           </div>
           {this.state.display === 'shape' &&  <div className="mood_create-avatar-wrapper">
             {this.state.params.map((x, i)  => { if(x.categorie === "shape") {
-              return (<div key={i} className={`choice_element ${x.element}`}>
-              <img src={`${x.image}`} alt="test"/>
-            </div>)}})}
+              return (
+                <div key={i} className={`choice_element ${x.element}`}>
+                  <input type="radio" id={x.element} value={x.element} checked={this.state.selectedOption === `${x.element}`} onChange={this.handleOptionChange} />
+						      <label for={x.element}><img src={`${x.image}`} alt={x.element}/></label>
+                </div>
+            )}})}
           </div>}
           {this.state.display === 'face' &&  <div className="mood_create-avatar-wrapper">
             {this.state.params.map((x, i) => { if(x.categorie === "face") {
-              return (<div key={i} className={`choice_element ${x.element}`}>
-              <img src={`${x.image}`} alt="test"/>
-            </div>)}})}
+              return (
+                <div key={i} className={`choice_element ${x.element}`}>
+                  <input type="radio" id={x.element} value={x.element} checked={this.state.selectedOption === `${x.element}`} onChange={this.handleOptionChange} />
+						      <label for={x.element}><img src={`${x.image}`} alt={x.element}/></label>
+                </div>
+              )}})}
           </div>}
           {this.state.display === 'hair' &&  <div className="mood_create-avatar-wrapper">
             {this.state.params.map((x, i) => { if(x.categorie === "hair") {
-              return (<div key={i} className={`choice_element ${x.element}`}>
-              <img src={`${x.image}`} alt="test"/>
-            </div>)}})}
+              return (
+                <div key={i} className={`choice_element ${x.element}`}>
+                  <input type="radio" id={x.element} value={x.element} checked={this.state.selectedOption === `${x.element}`} onChange={this.handleOptionChange} />
+						      <label for={x.element}><img src={`${x.image}`} alt={x.element}/></label>
+                </div>
+              )}})}
           </div>}
           {this.state.display === 'accessorie' &&  <div className="mood_create-avatar-wrapper">
             {this.state.params.map((x, i) => { if(x.categorie === "accessorie") {
-              return (<div key={i} className={`choice_element ${x.element}`}>
-              <img src={`${x.image}`} alt="test"/>
-            </div>)}})}
+              return (
+                <div key={i} className={`choice_element ${x.element}`}>
+                  <input type="radio" id={x.element} value={x.element} checked={this.state.selectedOption === `${x.element}`} onChange={this.handleOptionChange} />
+						      <label for={x.element}><img src={`${x.image}`} alt={x.element}/></label>
+                </div>
+              )}})}
           </div>}
         </div>    
     );
