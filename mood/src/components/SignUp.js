@@ -26,7 +26,7 @@ class SignUp extends Component {
     })
     .then(res => res.json())
     .then(data => {
-      this.setState({ resultType: data.resultType, resultMessage: data.resultMessage });
+      this.setState({ resultType: data.resultType, resultMessage: "Something went wrong." });
       if (data.resultType === 'success') {
         this.setState({ email: '', password: '' });
       }
@@ -40,8 +40,9 @@ class SignUp extends Component {
 
   render() {
     return (
-        <>
-        <div className="result_message">{this.state.resultMessage && <ResultMessage type={this.state.resultType} message={this.state.resultMessage} clearResult={this.clearResult} />}</div>
+      <>
+        <div className="result_message">{this.state.resultMessage && <ResultMessage type={this.state.resultType} message={this.state.resultMessage} clearResult={this.clearResult} />}
+        </div>
         <div className="login_sign-up">
             <div className="sign-up_content">
                 <div className="sign-up_title">
@@ -66,7 +67,7 @@ class SignUp extends Component {
                 </div>
             </div>
         </div>
-        </>
+      </>
     )
   }
 }  
