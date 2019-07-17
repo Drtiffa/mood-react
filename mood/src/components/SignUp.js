@@ -26,9 +26,12 @@ class SignUp extends Component {
     })
     .then(res => res.json())
     .then(data => {
-      this.setState({ resultType: data.resultType, resultMessage: "Something went wrong." });
+      this.setState({ resultType: data.resultType});
       if (data.resultType === 'success') {
+        this.setState({resultMessage: data.resultMessage});
         this.setState({ email: '', password: '' });
+      } else {
+        this.setState({ resultMessage: "Something went wrong." });
       }
     })
     .catch(err => console.warn(err))
