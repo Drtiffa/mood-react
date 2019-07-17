@@ -119,6 +119,7 @@ button:focus {
 //  BLOCK CREATE AVATAR  //
 
 .mood_create-avatar {
+  float: left;
   width: 50%;
   margin-top: 5%;
   .mood_create-avatar-nav {
@@ -166,8 +167,15 @@ button:focus {
 
 //  BLOCK RESULT AVATAR  //
 
-
-
+.mood_result-avatar {
+  float: right;
+  width: 50%;
+  margin-top: -2%;
+  position: relative;
+  .mood_result-image {
+    position: absolute;
+  }
+}
 
 // BUTTON DOWNLOAD AVATAR //
 

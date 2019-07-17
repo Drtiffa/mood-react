@@ -23,7 +23,7 @@ export default class ButtonDownload extends Component {
 
     render() {
         return (
-            <section>
+            <section className="section_button-download">
                 <div className="mood_button-download">
                     <button className="button_download" onClick={() => this.openModal()}>Download my avatar</button>
                 </div>
