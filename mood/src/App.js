@@ -19,6 +19,7 @@ class App extends Component {
                 <div className="mood_container">
                   <Router>
                     <Header />
+                    {/* je dis que tel route renvoi a tel component */}
                     <Switch>
                         <Route exact path='/' component={Home} />
                         <Route path='/login' component={Login} />

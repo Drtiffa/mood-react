@@ -9,6 +9,7 @@ class SignIn extends Component {
         resultMessage: ''
     }
 
+    // permet au raffraichissement de l'app de se reconnecter grace au Local Storage
     checkLocalStorage = () => {
     var email = localStorage.getItem("email");
         if (email) {
@@ -16,10 +17,12 @@ class SignIn extends Component {
         }
     }
 
+    // je recupere l'info rentré dans l'input 
     handleChange = (e) => {
         this.setState({ [e.target.id]: e.target.value });
     }
 
+    // j'envoie les infos remplis dans mes input à mon back pour les rentrer dans ma BDD
     postSignIn = (email, password) => {
         var body = JSON.stringify({ email, password })
         const headers = {
@@ -43,12 +46,14 @@ class SignIn extends Component {
         .catch(err => console.warn(err))
     }
 
+    // permet de se deconnecter
     logOut = () => {
 	    this.setState({ email: '' });
 	    localStorage.removeItem("token");
 	    localStorage.removeItem("email");
     }
       
+    // fonction déclenché par le timeOut, qui fait que le composant ResultMessage n'apparait plus
     clearResult = () => {
         this.setState({ resultType: '', resultMessage: '' });
     }  
