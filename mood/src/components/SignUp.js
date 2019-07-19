@@ -5,6 +5,7 @@ class SignUp extends Component {
   state = {
     email: '',
     password: '',
+    confirmedPassword: '',
     resultType: '',
     resultMessage: ''
   }
@@ -15,26 +16,25 @@ class SignUp extends Component {
   }
 
   // j'envoie les infos remplis dans mes input à mon back pour les rentrer dans ma BDD
-  postSignUp = (email, password) => {
-    var body = JSON.stringify({ email, password })
+  postSignUp = (email, password, confirmedPassword) => {
+    var body = JSON.stringify({ email, password, confirmedPassword })
     const headers = {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
         }
-    fetch('http://localhost:3001/users/signup', {
+    fetch('http://localhost:3001/users', {
       method: 'POST',
       headers,
       body
     })
     .then(res => res.json())
     .then(data => {
-      this.setState({ resultType: data.resultType});
-      if (data.resultType === 'success') {
-        this.setState({resultMessage: data.resultMessage});
-        this.setState({ email: '', password: '' });
-      } else {
-        this.setState({ resultMessage: "Something went wrong." });
-      }
+      console.log(data);
+      this.setState({ resultType: data.resultType, resultMessage: data.resultMessage}, () => {
+        if (data.resultType === 'success') {
+          this.setState({ email: '', password: '', confirmedPassword: '' });
+        } 
+      });
     })
     .catch(err => console.warn(err))
   }
@@ -65,11 +65,11 @@ class SignUp extends Component {
                     </div>
                     <div className="sign-up_form-element sign-up_form-password">
                         <label>Confirmed password</label>
-                        <input type="password" id="confirmed_password" name="confirmed_password" required placeholder="Confirmed password"></input>
+                        <input type="password" id="confirmedPassword" name="confirmedPassword" required placeholder="Confirmed password" value={this.state.confirmedPassword} onChange={this.handleChange}></input>
                     </div>
                 </form>
                 <div className="sign-up_button">
-                    <button className="sign-up_submit" value="Signup" onClick={() => this.postSignUp(this.state.email, this.state.password)}>Sign up</button>
+                    <button className="sign-up_submit" value="Signup" onClick={() => this.postSignUp(this.state.email, this.state.password, this.state.confirmedPassword)}>Sign up</button>
                 </div>
             </div>
         </div>

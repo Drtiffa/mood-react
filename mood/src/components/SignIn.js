@@ -29,7 +29,7 @@ class SignIn extends Component {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
-        fetch('http://localhost:3001/users/signin', {
+        fetch('http://localhost:3001/users/auth', {
             method: 'POST',
             headers,
             body
