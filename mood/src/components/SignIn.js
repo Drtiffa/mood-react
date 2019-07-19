@@ -41,6 +41,9 @@ class SignIn extends Component {
         if (data.resultType === 'success') {
             localStorage.setItem("token",data.token)
             localStorage.setItem("email",email)
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 2000)
         }
     })
         .catch(err => console.warn(err))
