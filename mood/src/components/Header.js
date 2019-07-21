@@ -1,7 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 class Header extends Component {
+
+    // me deconnecte  et me renvoi sur la page Login
+    logout = () => {
+	     localStorage.removeItem("token");
+         localStorage.removeItem("email");
+         this.forceUpdate();
+    }
+
+    // si je ne suis pas loger le boutton LOGIN est visible, a l'inverse se sera le boutton LOGOUT 
+    displayLogin = () => {
+        if (localStorage.getItem("token")) {
+            return (
+                <Link to='/login'><button className="mood_logout-button" onClick={this.logout}>Logout</button></Link>
+            )
+        } else {
+            return (
+                <Link to='/login'><button className="mood_login-button">Login</button></Link>
+            )
+        }
+    }
+
   render() {
     return (
         <div className="mood_nav">
@@ -13,8 +35,7 @@ class Header extends Component {
                 <h1>Create your avatar</h1>
             </div>
             <div className="mood_login">
-                {/* au click je suis renvoyé sur la page Login */}
-                <Link to='/login'><button className="mood_login-button">Login</button></Link>
+                { this.displayLogin() }
             </div>
         </div>
     );

@@ -6,7 +6,8 @@ class SignIn extends Component {
         email: '',
         password: '',
         resultType: '',
-        resultMessage: ''
+        resultMessage: '',
+        redirect: false
     }
 
     // permet au raffraichissement de l'app de se reconnecter grace au Local Storage
@@ -41,21 +42,15 @@ class SignIn extends Component {
         if (data.resultType === 'success') {
             localStorage.setItem("token",data.token)
             localStorage.setItem("email",email)
+            // apres verification, si je suis bien loger je suis renvoyé sur la Home au bout d'une seconde
             setTimeout(() => {
                 window.location.href = '/';
-            }, 2000)
+            }, 1000)
         }
     })
         .catch(err => console.warn(err))
     }
 
-    // permet de se deconnecter
-    logOut = () => {
-	    this.setState({ email: '' });
-	    localStorage.removeItem("token");
-	    localStorage.removeItem("email");
-    }
-      
     // fonction déclenché par le timeOut, qui fait que le composant ResultMessage n'apparait plus
     clearResult = () => {
         this.setState({ resultType: '', resultMessage: '' });

@@ -104,7 +104,8 @@ button:focus {
   .mood_login {
       width: 40%;
       text-align: right;
-      .mood_login-button {
+      .mood_login-button,
+      .mood_logout-button {
           @include button;
       }
   }
