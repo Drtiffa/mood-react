@@ -133,13 +133,13 @@ button:focus {
       padding-bottom: 2%;
       margin-bottom: 5%;
       .mood_create-nav-option {
-        width: 25%;
         cursor: pointer;
         color: $color-black;
         font-size: 1.3rem;
         font-family: "HILVCCBoing-Bold";
         text-transform: uppercase;
         text-align: center;
+        margin: auto;
         &:hover {
           color: $color-grey;
         }
@@ -318,6 +318,121 @@ button:focus {
     }
     &.failure {
       color: $color-red;
+    }
+  }
+}
+
+// RESPONSIVE 
+
+// Tablet
+@media (max-width: 1024px) {
+  //  nav  //
+  .mood_nav {
+    .mood_logo {
+      width: 30%;
+    }
+    .mood_text-intro {
+      width: 50%;
+    }
+    .mood_login {
+      width: 30%;
+    }
+  }
+  //  block create avatar  //
+  .mood_create-avatar {
+    .mood_create-avatar-nav {
+      width: 80%;
+      .mood_create-nav-list {
+        .mood_create-nav-option {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .mood_create-avatar-wrapper {
+      width: 80%;
+      &.face {
+        margin-top: -7%;
+      }
+      .choice_element {
+        margin-bottom: 0;
+        height: 120px;
+      }
+    }
+  }
+  //  block result avatar  //
+  .mood_result-avatar {
+    margin-top: 2%;
+  }
+}
+
+// Mobile
+@media (max-width: 768px) {
+  #background {
+    width: 100%;
+  }
+  //  nav  //
+  .mood_nav {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0px;
+    background: rgba(230, 230, 230, 0.5);
+    .mood_logo {
+      font-size: 60px;
+    }
+    .mood_text-intro {
+      font-size: 15px;
+    }
+    .mood_login {
+      .mood_login-button,
+      .mood_logout-button {
+        padding: 5px 25px;
+      }
+    }
+  }
+  //  block create avatar  //
+  .mood_create-avatar {
+    float: none;
+    width: 85%;
+    height: 405px;
+    margin: 25px auto;
+  }
+  //  block result avatar  //
+  .mood_result-avatar {
+    float: none;
+    width: 70%;
+    margin: 0 auto;
+    .mood_result-image {
+      &:first-child {
+        background-color: rgba(230, 230, 230, 0.5);
+        border: 1px solid $color-purple;
+        border-radius: 5px;
+      }
+      padding-top: 10%;
+    }
+  }
+  // button download //
+  .section_button-download {
+    margin: 85% 0 5%;
+    text-align: center;
+    .mood_button-download {
+      left: 0;
+      transform: none;
+      position: relative;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  //  block create avatar  //
+  .mood_create-avatar {
+    height: 370px;
+    .mood_create-avatar-nav {
+      width: 90%;
+      .mood_create-nav-list {
+        .mood_create-nav-option {
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 }
