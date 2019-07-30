@@ -43,16 +43,40 @@ class Home extends Component {
           })
       }
 
+      // canvas qui me permet le dowload de l'image de mon avatar
+      componentDidUpdate() { 
+        if(this.state.params.length > 0) {
+          var canvas = document.getElementById("canvas");
+          var ctx = canvas.getContext("2d");
+          var image = new Image();
+          
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          ctx.fillStyle = "#ffffff";
+          ctx.fillRect(0,0, canvas.width, canvas.height);
+    
+          const base = this.state.avatar_elements.map(y => {
+            var param = this.state.params.find(x => x.element === 'element_'+ y)
+            return param && param.image
+          });
+          
+          base.forEach(function(element) {
+            image.src = element;
+            ctx.drawImage(image,0,0,500,500);
+          });
+        }
+      }
+
     render() {
-        return (
+      return (
         <div className="mood_home">
             <CreateAvatar state={this.state} 
             display={this.display} 
             selectAvatar={this.selectAvatar} />
-            <ResultAvatar state={this.state} />
-            <ButtonDownload />  
+            <ResultAvatar state={this.state} componentDidUpdate={this.componentDidUpdate} />
+            <ButtonDownload componentDidUpdate={this.componentDidUpdate} />  
         </div>
-    )
+      )
     }
 }
 

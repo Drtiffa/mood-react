@@ -16,6 +16,13 @@ export default class ButtonDownload extends Component {
         this.setState({
             visible : true
         });
+
+        // je crée mon image
+        var img = document.getElementById("canvas").toDataURL("image/png");
+        // j'ajoute mon image a mon href
+        var download_myAvatar = document.getElementById("download_myAvatar");
+        download_myAvatar.href=img;
+
     }
 
     // ferme ma popin au click
@@ -46,7 +53,7 @@ export default class ButtonDownload extends Component {
                         <h1>Download my avatar</h1>
                         <div className="avatar_download">
                             <p>My URL avatar : <span className="url">www.myurlavatar.fr</span></p>
-                            <p>Export my avatar <span className="svg">SVG</span> or <span className="png">PNG</span>.</p>
+                            <p>Export my avatar <a href="" download="my_avatar.png" id="download_myAvatar"><span className="png">PNG</span></a>.</p>
                         </div>
                     </div>
                 </Modal>

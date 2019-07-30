@@ -234,7 +234,7 @@ button:focus {
       .url {
           color: $color-purple;
       }
-      .svg, .png {
+      .png {
           cursor: pointer;
           font-family: "HILVCCBoing-Bold";
           color: $color-purple;
@@ -315,6 +315,12 @@ button:focus {
       color: $color-red;
     }
   }
+}
+
+
+// CANVAS
+canvas {
+  display: none;
 }
 
 
