@@ -4,7 +4,6 @@ import Header from './components/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Login from './components/Login';
-// import Canvas from './components/canvas';
 
 class App extends Component {
   render() {
@@ -12,9 +11,6 @@ class App extends Component {
       <div className="App">
         <div id="background"></div>
         <div className="mood_main">
-            {/* <div className="mood_col-test">
-              <Canvas />
-            </div> */}
             <div className="mood_col-main">
                 <div className="mood_container">
                   <Router>
