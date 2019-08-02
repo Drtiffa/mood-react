@@ -2,34 +2,56 @@ import React, { Component } from 'react';
 // j'importe une librairie de popin 
 import Modal from 'react-awesome-modal';
 
-export default class ButtonDownload extends Component {
+class ButtonDownload extends Component {
     constructor(props) {
         super(props);
         // popin fermé de base
         this.state = {
-            visible : false
+            visible : false,
+            img: null,
+            imgUId: null
         }
     }
 
     // ouvre ma popin au click
     openModal() {
+
+        const actualImage = document.getElementById("canvas").toDataURL("image/png");
+
         this.setState({
-            visible : true
+            visible : true,
+            // je crée mon image
+            img : actualImage
         });
+        
 
-        // je crée mon image
-        var img = document.getElementById("canvas").toDataURL("image/png");
-        // j'ajoute mon image a mon href
-        var download_myAvatar = document.getElementById("download_myAvatar");
-        download_myAvatar.href=img;
+        var body = JSON.stringify({ actualImage })
 
+        const headers = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+
+        fetch('http://localhost:3001/avatar', {
+            method: 'POST',
+            headers,
+            body
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            this.setState({
+                imgUId : data.imgUId
+            });
+        })
+        .catch(err => console.warn(err))
     }
 
     // ferme ma popin au click
-    closeModal() {
+    closeModal(img) {
         this.setState({
             visible : false,
-        });
+        });   
     }
 
     render() {
@@ -52,8 +74,8 @@ export default class ButtonDownload extends Component {
                         <span className="modal_close" onClick={() => this.closeModal()}>X</span>
                         <h1>Download my avatar</h1>
                         <div className="avatar_download">
-                            <p>My URL avatar : <span className="url">www.myurlavatar.fr</span></p>
-                            <p>Export my avatar <a href="" download="my_avatar.png" id="download_myAvatar"><span className="png">PNG</span></a>.</p>
+                            <p>My URL avatar : <span className="url">{this.state.imgUId}</span></p>
+                            <p>Export my avatar <a href={this.state.img} download="my_avatar.png"><span className="png">PNG</span></a>.</p>
                         </div>
                     </div>
                 </Modal>
@@ -61,3 +83,5 @@ export default class ButtonDownload extends Component {
         );
     }
 };
+
+export default ButtonDownload
