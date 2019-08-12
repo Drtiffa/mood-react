@@ -8,7 +8,8 @@ class Home extends Component {
         params : [],
         categories : ['shape', 'face', 'hair', 'accessorie'],
         display : '',
-        avatar_elements : [1, 4, 12, 19]
+        avatar_elements : [1, 4, 12, 19],
+        selectedMenuIndex : 0
       }
     
       // je fais le lien avec mon back en faisant un appel HTTP a la racine
@@ -23,8 +24,9 @@ class Home extends Component {
       }
     
       // affiche ma categorie au click
-      display = (categorie) => {
+      display = (categorie, index) => {
         this.setState({ display: categorie })
+        this.setState({ selectedMenuIndex: index })
       } 
 
       // selectionne les elements au click pour composer l'avatar

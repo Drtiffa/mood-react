@@ -7,8 +7,11 @@ class CreateAvatar extends Component {
           <div className="mood_create-avatar-nav">
               <ul className="mood_create-nav-list">
                 {/* je boucle dans mon tableau categories pour créer chaque li par categorie */}
-                {this.props.state.categories.map(category => 
-                  <li onClick={() => this.props.display(category)} className="mood_create-nav-option">{category}</li>)
+                {this.props.state.categories.map((category, index) => {
+                    // je rajoute la class active au li selectionné
+                    var selectedIndex = this.props.state.selectedMenuIndex === index ? 'active' : '';
+                    return <li onClick={() => this.props.display(category, index)} className={`mood_create-nav-option ${selectedIndex}`}>{category}</li>
+                  })
                 }
               </ul>
           </div>

@@ -129,19 +129,19 @@ button:focus {
     .mood_create-nav-list {
       list-style: none;
       display: flex;
-      border-bottom: 2px solid $color-black;
+      border-bottom: 2px solid $color-grey;
       padding-bottom: 2%;
       margin-bottom: 5%;
       .mood_create-nav-option {
-        cursor: pointer;
-        color: $color-black;
+        cursor: pointer; 
+        color: $color-grey;
         font-size: 1.3rem;
         font-family: "HILVCCBoing-Bold";
         text-transform: uppercase;
         text-align: center;
         margin: auto;
-        &:hover {
-          color: $color-grey;
+        &.active {
+          color: $color-black;
         }
       }
     }
