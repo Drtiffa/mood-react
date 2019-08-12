@@ -233,11 +233,18 @@ button:focus {
       }
       .url {
           color: $color-purple;
+          overflow-wrap: break-word;
+          &:hover {
+            font-weight: 900;
+        }
       }
       .png {
           cursor: pointer;
           font-family: "HILVCCBoing-Bold";
           color: $color-purple;
+          &:hover {
+            text-decoration: underline;
+        }
       } 
   }
 }
