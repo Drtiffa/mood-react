@@ -74,7 +74,7 @@ class ButtonDownload extends Component {
                         <span className="modal_close" onClick={() => this.closeModal()}>X</span>
                         <h1>Download my avatar</h1>
                         <div className="avatar_download">
-                            <p>My URL avatar : <a className="url" href={`http://localhost:3001/avatar/${this.state.imgUId}/image`} target="_blank">http://localhost:3001/avatar/{this.state.imgUId}/image</a></p>
+                            <p>My URL avatar : <a className="url" href={`http://localhost:3001/avatar/${this.state.imgUId}/image`} target="_blank" rel="noopener noreferrer">http://localhost:3001/avatar/{this.state.imgUId}/image</a></p>
                             <p>Export my avatar <a href={this.state.img} download="my_avatar.png"><span className="png">PNG</span></a>.</p>
                         </div>
                     </div>
