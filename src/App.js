@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import Header from './components/Header';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Login from './components/Login';
 
@@ -13,7 +13,7 @@ class App extends Component {
         <div className="mood_main">
             <div className="mood_col-main">
                 <div className="mood_container">
-                  <Router>
+                  <Router basename='/'>
                     <Header />
                     {/* je dis que tel route renvoi a tel component */}
                     <Switch>
