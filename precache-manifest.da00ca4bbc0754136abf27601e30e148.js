@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f8d89739592e27243d3febff7710a76c",
+    "revision": "de27cdd2aa706db81282f68479d3554f",
     "url": "/mood-react/index.html"
   },
   {
-    "revision": "acc8029e0babcd714c0c",
+    "revision": "bf546ab97ef6e97d21a7",
     "url": "/mood-react/static/css/main.7e2637cf.chunk.css"
   },
   {
-    "revision": "323eac48082df29b8513",
-    "url": "/mood-react/static/js/2.ad0252cd.chunk.js"
+    "revision": "f2c4273e5229736e4d1d",
+    "url": "/mood-react/static/js/2.328dc0ff.chunk.js"
   },
   {
-    "revision": "acc8029e0babcd714c0c",
-    "url": "/mood-react/static/js/main.60c29e52.chunk.js"
+    "revision": "bf546ab97ef6e97d21a7",
+    "url": "/mood-react/static/js/main.c6fb23ac.chunk.js"
   },
   {
     "revision": "3b7fdeae929990e67862",
