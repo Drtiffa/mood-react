@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/mood-react/mood/public/static/css/main.803573a4.chunk.css",
-    "main.js": "/mood-react/mood/public/static/js/main.436f968f.chunk.js",
-    "main.js.map": "/mood-react/mood/public/static/js/main.436f968f.chunk.js.map",
-    "runtime~main.js": "/mood-react/mood/public/static/js/runtime~main.15c9ae74.js",
-    "runtime~main.js.map": "/mood-react/mood/public/static/js/runtime~main.15c9ae74.js.map",
-    "static/js/2.ad0252cd.chunk.js": "/mood-react/mood/public/static/js/2.ad0252cd.chunk.js",
-    "static/js/2.ad0252cd.chunk.js.map": "/mood-react/mood/public/static/js/2.ad0252cd.chunk.js.map",
-    "index.html": "/mood-react/mood/public/index.html",
-    "precache-manifest.c3470bd2a647d5ae427a661b1bfaf11c.js": "/mood-react/mood/public/precache-manifest.c3470bd2a647d5ae427a661b1bfaf11c.js",
-    "service-worker.js": "/mood-react/mood/public/service-worker.js",
-    "static/css/main.803573a4.chunk.css.map": "/mood-react/mood/public/static/css/main.803573a4.chunk.css.map",
-    "static/media/App.scss": "/mood-react/mood/public/static/media/HILVCC+Boing-Light.a3c61a64.ttf"
+    "main.css": "/mood-react/static/css/main.7e2637cf.chunk.css",
+    "main.js": "/mood-react/static/js/main.60c29e52.chunk.js",
+    "main.js.map": "/mood-react/static/js/main.60c29e52.chunk.js.map",
+    "runtime~main.js": "/mood-react/static/js/runtime~main.2b857f92.js",
+    "runtime~main.js.map": "/mood-react/static/js/runtime~main.2b857f92.js.map",
+    "static/js/2.ad0252cd.chunk.js": "/mood-react/static/js/2.ad0252cd.chunk.js",
+    "static/js/2.ad0252cd.chunk.js.map": "/mood-react/static/js/2.ad0252cd.chunk.js.map",
+    "index.html": "/mood-react/index.html",
+    "precache-manifest.cfb0649eca6246a0fa4b6036b1bdb810.js": "/mood-react/precache-manifest.cfb0649eca6246a0fa4b6036b1bdb810.js",
+    "service-worker.js": "/mood-react/service-worker.js",
+    "static/css/main.7e2637cf.chunk.css.map": "/mood-react/static/css/main.7e2637cf.chunk.css.map",
+    "static/media/App.scss": "/mood-react/static/media/HILVCC+Boing-Light.a3c61a64.ttf"
   }
 }
