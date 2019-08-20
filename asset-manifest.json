@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/mood-react/mood/static/css/main.1eac764c.chunk.css",
+    "main.js": "/mood-react/mood/static/js/main.d0a81ce4.chunk.js",
+    "main.js.map": "/mood-react/mood/static/js/main.d0a81ce4.chunk.js.map",
+    "runtime~main.js": "/mood-react/mood/static/js/runtime~main.578b5aff.js",
+    "runtime~main.js.map": "/mood-react/mood/static/js/runtime~main.578b5aff.js.map",
+    "static/js/2.ad0252cd.chunk.js": "/mood-react/mood/static/js/2.ad0252cd.chunk.js",
+    "static/js/2.ad0252cd.chunk.js.map": "/mood-react/mood/static/js/2.ad0252cd.chunk.js.map",
+    "index.html": "/mood-react/mood/index.html",
+    "precache-manifest.a62904de32533cbb21423978def3d0d1.js": "/mood-react/mood/precache-manifest.a62904de32533cbb21423978def3d0d1.js",
+    "service-worker.js": "/mood-react/mood/service-worker.js",
+    "static/css/main.1eac764c.chunk.css.map": "/mood-react/mood/static/css/main.1eac764c.chunk.css.map",
+    "static/media/App.scss": "/mood-react/mood/static/media/HILVCC+Boing-Light.a3c61a64.ttf"
+  }
+}
