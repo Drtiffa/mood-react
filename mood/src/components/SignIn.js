@@ -30,7 +30,7 @@ class SignIn extends Component {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
-        fetch('http://localhost:3001/users/auth', {
+        fetch('https://mood-avatar.herokuapp.com/users/auth', {
             method: 'POST',
             headers,
             body

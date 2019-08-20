@@ -22,7 +22,7 @@ class SignUp extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
         }
-    fetch('http://localhost:3001/users', {
+    fetch('https://mood-avatar.herokuapp.com/users', {
       method: 'POST',
       headers,
       body

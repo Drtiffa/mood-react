@@ -14,7 +14,7 @@ class Home extends Component {
     
       // je fais le lien avec mon back en faisant un appel HTTP a la racine
       componentDidMount() {
-        fetch('http://localhost:3001/')
+        fetch('https://mood-avatar.herokuapp.com/')
         .then(res => res.json())
         .then(params => this.setState( { params } ))
         .catch(err => console.log(err))
