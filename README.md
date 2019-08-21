@@ -1,3 +1,37 @@
+# MOOD Avatar
+Try it [here](https://drtiffa.github.io/mood-react/) !
+
+![](./public/Capture_App.png)
+
+## What is this project ?
+
+We can compose our avatar by choosing the shape, face, hair and accessory.
+
+After we can have a unique URL for the avatar create and download PNG.
+
+We can create account and login.  
+
+## The stack
+
+The main libs of this project are :
+
+* React
+* React Router
+* react-awesome-modal
+
+## ROADMAP
+
+The futur features is :
+
+1. A personal page with the avatars save
+2. You can edit an avatar 
+3. You can delete it
+
+-------
+-------
+
+# REACT
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +100,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
