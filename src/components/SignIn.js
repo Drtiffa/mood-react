@@ -59,27 +59,27 @@ class SignIn extends Component {
     render() {
         return (
             <>
-            <div className="result_message">{this.state.resultMessage && <ResultMessage type={this.state.resultType} message={this.state.resultMessage} clearResult={this.clearResult} />}</div>
-            <div className="login_sign-in">
-                <div className="sign-in_content">
-                    <div className="sign-in_title">
-                        <h2>Sign in</h2>
-                    </div>
-                    <form className="sign-in_form">
-                        <div className="sign-in_form-element sign-in_form-email">
-                            <label>Email</label>
-                            <input type="text" id="email" name="email" required placeholder="Enter email" value={this.state.email} onChange={this.handleChange}></input>
+                <div className="result_message">{this.state.resultMessage && <ResultMessage type={this.state.resultType} message={this.state.resultMessage} clearResult={this.clearResult} />}</div>
+                <div className="login_sign-in">
+                    <div className="sign-in_content">
+                        <div className="sign-in_title">
+                            <h2>Sign in</h2>
                         </div>
-                        <div className="sign-in_form-element sign-in_form-password">
-                            <label>Password</label>
-                            <input type="password" id="password" name="password" required placeholder="Enter password" value={this.state.password} onChange={this.handleChange}></input>
+                        <form className="sign-in_form">
+                            <div className="sign-in_form-element sign-in_form-email">
+                                <label>Email</label>
+                                <input type="text" id="email" name="email" required placeholder="Enter email" value={this.state.email} onChange={this.handleChange}></input>
+                            </div>
+                            <div className="sign-in_form-element sign-in_form-password">
+                                <label>Password</label>
+                                <input type="password" id="password" name="password" required placeholder="Enter password" value={this.state.password} onChange={this.handleChange}></input>
+                            </div>
+                        </form>
+                        <div className="sign-in_button">
+                            <button className="sign-in_submit" value="Signin" onClick={() => this.postSignIn(this.state.email, this.state.password)}>Sign in</button>
                         </div>
-                    </form>
-                    <div className="sign-in_button">
-                        <button className="sign-in_submit" value="Signin" onClick={() => this.postSignIn(this.state.email, this.state.password)}>Sign in</button>
                     </div>
                 </div>
-            </div>
             </>
         )
     }    

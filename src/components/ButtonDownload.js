@@ -15,23 +15,17 @@ class ButtonDownload extends Component {
 
     // ouvre ma popin au click
     openModal() {
-
         const actualImage = document.getElementById("canvas").toDataURL("image/png");
-
         this.setState({
             visible : true,
             // je crée mon image
             img : actualImage
         });
-        
-
         var body = JSON.stringify({ actualImage })
-
         const headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
-
         fetch('https://mood-avatar.herokuapp.com/avatar', {
             method: 'POST',
             headers,
@@ -48,7 +42,7 @@ class ButtonDownload extends Component {
     }
 
     // ferme ma popin au click
-    closeModal(img) {
+    closeModal() {
         this.setState({
             visible : false,
         });   

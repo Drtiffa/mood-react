@@ -6,7 +6,7 @@ import ResultAvatar from './ResultAvatar';
 class Home extends Component {
     state = {
         params : [],
-        categories : ['shape', 'face', 'hair', 'accessorie'],
+        categories : ['shape', 'face', 'hair', 'accessory'],
         display : '',
         avatar_elements : [1, 4, 12, 19],
         selectedMenuIndex : 0
@@ -18,7 +18,7 @@ class Home extends Component {
         .then(res => res.json())
         .then(params => this.setState( { params } ))
         .catch(err => console.log(err))
-    
+
         // à l'ouverture de l'app ma catégorie shape est visible de base
         this.setState({ display: this.state.categories[0] })
       }
@@ -31,18 +31,18 @@ class Home extends Component {
 
       // selectionne les elements au click pour composer l'avatar
       selectAvatar = (elementNumber) => {
-          // on créer une copie du tableau avatar_elements
-          var new_avatar_elements = [...this.state.avatar_elements]
-          // recuper la category correspondant a elementNumber
-          var element_category = this.state.params.find(x => x.element === 'element_' + elementNumber).categorie
-          // on recupere l'index de ma category dans mon tableau categories
-          var category_index = this.state.categories.findIndex(x => x === element_category);
-          // on remplace l'index de l'element seclectionné pour sa category
-          new_avatar_elements[category_index] = elementNumber
-          this.setState( {
-              // le tableau avatar_elements est remplacé par sa copie new_avatar_elements
-              avatar_elements : new_avatar_elements
-          })
+        // on créer une copie du tableau avatar_elements
+        var new_avatar_elements = [...this.state.avatar_elements]
+        // recuper la category correspondant a elementNumber
+        var element_category = this.state.params.find(x => x.element === 'element_' + elementNumber).categorie
+        // on recupere l'index de ma category dans mon tableau categories
+        var category_index = this.state.categories.findIndex(x => x === element_category);
+        // on remplace l'index de l'element seclectionné pour sa category
+        new_avatar_elements[category_index] = elementNumber
+        this.setState( {
+          // le tableau avatar_elements est remplacé par sa copie new_avatar_elements
+          avatar_elements : new_avatar_elements
+        })
       }
 
       // canvas qui me permet le dowload de l'image de mon avatar
@@ -75,7 +75,8 @@ class Home extends Component {
             <CreateAvatar state={this.state} 
             display={this.display} 
             selectAvatar={this.selectAvatar} />
-            <ResultAvatar state={this.state} componentDidUpdate={this.componentDidUpdate} />
+            <ResultAvatar state={this.state} 
+            componentDidUpdate={this.componentDidUpdate} />
             <ButtonDownload componentDidUpdate={this.componentDidUpdate} />  
         </div>
       )

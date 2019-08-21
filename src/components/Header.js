@@ -5,9 +5,9 @@ class Header extends Component {
 
     // me deconnecte  et me renvoi sur la page Login
     logout = () => {
-	     localStorage.removeItem("token");
-         localStorage.removeItem("email");
-         this.forceUpdate();
+	    localStorage.removeItem("token");
+        localStorage.removeItem("email");
+        this.forceUpdate();
     }
 
     // si je ne suis pas loger le boutton LOGIN est visible, a l'inverse se sera le boutton LOGOUT 
