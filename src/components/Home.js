@@ -24,8 +24,8 @@ class Home extends Component {
       }
     
       // affiche ma categorie au click
-      display = (categorie, index) => {
-        this.setState({ display: categorie })
+      display = (category, index) => {
+        this.setState({ display: category })
         this.setState({ selectedMenuIndex: index })
       } 
 
@@ -34,7 +34,7 @@ class Home extends Component {
         // on créer une copie du tableau avatar_elements
         var new_avatar_elements = [...this.state.avatar_elements]
         // recuper la category correspondant a elementNumber
-        var element_category = this.state.params.find(x => x.element === 'element_' + elementNumber).categorie
+        var element_category = this.state.params.find(x => x.element === 'element_' + elementNumber).category
         // on recupere l'index de ma category dans mon tableau categories
         var category_index = this.state.categories.findIndex(x => x === element_category);
         // on remplace l'index de l'element seclectionné pour sa category

@@ -20,7 +20,7 @@ class CreateAvatar extends Component {
           <div key={category} className={`mood_create-avatar-wrapper ${category}`}>
             {/* pour chaque categorie je retrouve les elements dans mon tableau params qui on cette categorie */}
             {this.props.state.params.map((x, i)  => { 
-              if(x.categorie === category) {
+              if(x.category === category) {
                 return (
                   // je return ensuite toutes mes images qui ont la même categorie
                   <div key={i} className={`choice_element ${x.element}`}>
