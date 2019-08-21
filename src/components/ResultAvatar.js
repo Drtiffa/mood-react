@@ -5,10 +5,10 @@ class ResultAvatar extends Component {
     return(
       <>
         <div className="mood_result-avatar">
-          {/* je compare les tableaux avatar_elements et params afin de retrouver le même element dans mes deux tableaux */}
+          {/* compare the avatar_elements and params tables to find the same element in my two tables */}
           {this.props.state.avatar_elements.map(y => {
             var param = this.props.state.params.find(x => x.element === 'element_'+ y)
-            // si je trouve le même element dans mes deux tableaux alors j'injecte le param dans src et alt
+            // if find the same element in my two arrays then I inject the param into src and alt
             return <img key={y} id="image_svg" className="mood_result-image" src={param && param.image} alt={param && param.element}/>
           })}
         </div>

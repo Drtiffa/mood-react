@@ -10,7 +10,7 @@ class SignIn extends Component {
         redirect: false
     }
 
-    // permet au raffraichissement de l'app de se reconnecter grace au Local Storage
+    // allows the refresh of the app to reconnect with Local Storage
     checkLocalStorage = () => {
     var email = localStorage.getItem("email");
         if (email) {
@@ -18,12 +18,12 @@ class SignIn extends Component {
         }
     }
 
-    // je recupere l'info rentré dans l'input 
+    // collect the info entered in the input
     handleChange = (e) => {
         this.setState({ [e.target.id]: e.target.value });
     }
 
-    // j'envoie les infos remplis dans mes input à mon back pour les rentrer dans ma BDD
+    // send the information filled in my input to my database
     postSignIn = (email, password) => {
         var body = JSON.stringify({ email, password })
         const headers = {
@@ -42,7 +42,7 @@ class SignIn extends Component {
         if (data.resultType === 'success') {
             localStorage.setItem("token",data.token)
             localStorage.setItem("email",email)
-            // apres verification, si je suis bien loger je suis renvoyé sur la Home au bout d'une seconde
+            // after verification, if login returned to the Home after one second
             setTimeout(() => {
                 window.location.href = '/';
             }, 1000)
@@ -51,7 +51,7 @@ class SignIn extends Component {
         .catch(err => console.warn(err))
     }
 
-    // fonction déclenché par le timeOut, qui fait que le composant ResultMessage n'apparait plus
+    // function triggered by the timeOut, which makes the component ResultMessage hidden
     clearResult = () => {
         this.setState({ resultType: '', resultMessage: '' });
     }  

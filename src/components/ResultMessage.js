@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 	
 class ResultMessage extends Component {
 
-    // Timeout au bout de 5s le message disparait
+    // Timeout after 5s the message disappears
     componentDidMount() {
         setTimeout(() => {
             this.props.clearResult();
@@ -11,7 +11,7 @@ class ResultMessage extends Component {
 
     render() {
     return(
-        // le className prend le type d'err (failure ou success) puis on injecte le message correspondant
+        // className take type err (failure or success) then inject the corresponding message
         <div className={`result ${this.props.type}`}>
             {this.props.message}
         </div>

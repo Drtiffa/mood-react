@@ -10,12 +10,12 @@ class SignUp extends Component {
     resultMessage: ''
   }
 
-  // je recupere l'info rentré dans l'input 
+  // collect the info entered in the input
   handleChange = (e) => {
     this.setState({ [e.target.id]: e.target.value });
   }
 
-  // j'envoie les infos remplis dans mes input à mon back pour les rentrer dans ma BDD
+  // send the information filled in my input to my database
   postSignUp = (email, password, confirmedPassword) => {
     var body = JSON.stringify({ email, password, confirmedPassword })
     const headers = {
@@ -39,7 +39,7 @@ class SignUp extends Component {
     .catch(err => console.warn(err))
   }
 
-  // fonction déclenché par le timeOut, qui fait que le composant ResultMessage n'apparait plus
+  // function triggered by the timeOut, which makes the component ResultMessage no longer appears
   clearResult = () => {
     this.setState({ resultType: '', resultMessage: '' });
   }  

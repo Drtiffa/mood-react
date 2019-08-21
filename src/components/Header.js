@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 class Header extends Component {
 
-    // me deconnecte  et me renvoi sur la page Login
+    // disconnect me and send me back to the Login page
     logout = () => {
 	    localStorage.removeItem("token");
         localStorage.removeItem("email");
         this.forceUpdate();
     }
 
-    // si je ne suis pas loger le boutton LOGIN est visible, a l'inverse se sera le boutton LOGOUT 
+    // if I am not login the button LOGIN is visible, the opposite will be the button LOGOUT
     displayLogin = () => {
         if (localStorage.getItem("token")) {
             return (
@@ -27,7 +27,7 @@ class Header extends Component {
     return (
         <div className="mood_nav">
             <div className="mood_logo">
-                {/* au click je suis renvoyé sur ma Home à la racine de mon projet */}
+                {/* at the click I am sent back to my Home at the root of my project */}
                 <Link to='/'><span>Mood</span></Link>
             </div>
             <div className="mood_text-intro">

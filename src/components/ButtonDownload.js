@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-// j'importe une librairie de popin 
+// import a library popup
 import Modal from 'react-awesome-modal';
 
 class ButtonDownload extends Component {
     constructor(props) {
         super(props);
-        // popin fermé de base
+        // popin initially closed
         this.state = {
             visible : false,
             img: null,
@@ -13,12 +13,12 @@ class ButtonDownload extends Component {
         }
     }
 
-    // ouvre ma popin au click
+    // open popup on click
     openModal() {
         const actualImage = document.getElementById("canvas").toDataURL("image/png");
         this.setState({
             visible : true,
-            // je crée mon image
+            // create image
             img : actualImage
         });
         var body = JSON.stringify({ actualImage })
@@ -41,7 +41,7 @@ class ButtonDownload extends Component {
         .catch(err => console.warn(err))
     }
 
-    // ferme ma popin au click
+    // close popup on click
     closeModal() {
         this.setState({
             visible : false,
@@ -51,11 +51,11 @@ class ButtonDownload extends Component {
     render() {
         return (
             <section className="section_button-download">
-                {/* bouton qui permet d'ouvrir ma popin */}
+                {/* button for open popup */}
                 <div className="mood_button-download">
                     <button className="button_download" onClick={() => this.openModal()}>Download my avatar</button>
                 </div>
-                {/* caracteristique de ma popin (etat de base, taille, effet à l'ouverture, fermeture popin au click en dehors de la popin) */}
+                {/* characteristic of my popup (basic state, size, opening effect, popup closing at click outside the popup) */}
                 <Modal 
                     visible={this.state.visible}
                     width="500"
@@ -63,7 +63,7 @@ class ButtonDownload extends Component {
                     effect="fadeInUp"
                     onClickAway={() => this.closeModal()}
                 >
-                    {/* popin */}
+                    {/* popup */}
                     <div className="modal_content">
                         <span className="modal_close" onClick={() => this.closeModal()}>X</span>
                         <h1>Download my avatar</h1>

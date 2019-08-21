@@ -12,40 +12,40 @@ class Home extends Component {
         selectedMenuIndex : 0
       }
     
-      // je fais le lien avec mon back en faisant un appel HTTP a la racine
+      // make the link with my back by making an HTTP call to the root
       componentDidMount() {
         fetch('https://mood-avatar.herokuapp.com/')
         .then(res => res.json())
         .then(params => this.setState( { params } ))
         .catch(err => console.log(err))
 
-        // à l'ouverture de l'app ma catégorie shape est visible de base
+        // when opening the app my category shape is visible
         this.setState({ display: this.state.categories[0] })
       }
     
-      // affiche ma categorie au click
+      // show my category on click
       display = (category, index) => {
         this.setState({ display: category })
         this.setState({ selectedMenuIndex: index })
       } 
 
-      // selectionne les elements au click pour composer l'avatar
+      // select the elements at the click to compose the avatar
       selectAvatar = (elementNumber) => {
-        // on créer une copie du tableau avatar_elements
+        // create a copy of avatar_elements table
         var new_avatar_elements = [...this.state.avatar_elements]
-        // recuper la category correspondant a elementNumber
+        // get the category corresponding to elementNumber
         var element_category = this.state.params.find(x => x.element === 'element_' + elementNumber).category
-        // on recupere l'index de ma category dans mon tableau categories
+        // get the index of my category in my categories table
         var category_index = this.state.categories.findIndex(x => x === element_category);
-        // on remplace l'index de l'element seclectionné pour sa category
+        // we replace the index of the element selected for its category
         new_avatar_elements[category_index] = elementNumber
         this.setState( {
-          // le tableau avatar_elements est remplacé par sa copie new_avatar_elements
+          // the avatar_elements table is replaced by its copy new_avatar_elements
           avatar_elements : new_avatar_elements
         })
       }
 
-      // canvas qui me permet le dowload de l'image de mon avatar
+      // canvas that allows the dowload of the image of my avatar
       componentDidUpdate() { 
         if(this.state.params.length > 0) {
           var canvas = document.getElementById("canvas");

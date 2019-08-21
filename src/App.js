@@ -15,7 +15,7 @@ class App extends Component {
                 <div className="mood_container">
                   <Router basename='/'>
                     <Header />
-                    {/* je dis que tel route renvoi a tel component */}
+                    {/* say that this road refers to such a component */}
                     <Switch>
                         <Route exact path='/' component={Home} />
                         <Route path='/login' component={Login} />
