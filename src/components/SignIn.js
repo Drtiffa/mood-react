@@ -44,7 +44,7 @@ class SignIn extends Component {
             localStorage.setItem("email",email)
             // after verification, if login returned to the Home after one second
             setTimeout(() => {
-                window.location.href = '/';
+                window.location.href = 'https://drtiffa.github.io/mood-react/#/';
             }, 1000)
         }
     })
