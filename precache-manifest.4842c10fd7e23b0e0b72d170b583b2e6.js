@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9a572bf76f40cb5d67e2547667b24cec",
+    "revision": "8cc99ef256e4a8df4cf5f47fafb9b5ca",
     "url": "/mood-react/index.html"
   },
   {
-    "revision": "4e7bc30ec68aa85202a4",
+    "revision": "b6a584981c58a7aaed7d",
     "url": "/mood-react/static/css/main.13478906.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mood-react/static/js/2.328dc0ff.chunk.js"
   },
   {
-    "revision": "4e7bc30ec68aa85202a4",
-    "url": "/mood-react/static/js/main.92c2ad4f.chunk.js"
+    "revision": "b6a584981c58a7aaed7d",
+    "url": "/mood-react/static/js/main.2bf3448c.chunk.js"
   },
   {
     "revision": "3b7fdeae929990e67862",
